@@ -60,3 +60,28 @@ const quizQuestions = [
         }, rightAnswer: "c",
     },
 ]
+
+function quizLogic()
+{
+    const output = []
+    // checking each questions and showing their output
+
+    quizQuestions.forEach((element,idx => {
+        // here we store the list of answers
+        const answers = [];
+        for (theAns in element.answer)
+            answers.push(
+                `<label>
+                 <input type ='radio' name='question${idx}' value='${theAns}'>${theAns}:
+                ${element.answer[theAns]}
+                </label>`
+            );
+        })
+        
+        output.push(
+            `<div class='question'> ${element.question}</div>
+            <div class = 'answer'>${answers.join('')}</div>`
+        )
+
+    
+}
