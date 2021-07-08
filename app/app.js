@@ -42,7 +42,7 @@
       const answerContainers = quizCached.querySelectorAll('.answers');
   
       // keep track of user's answers
-      let numCorrect = 0;
+      let totCorrect = 0;
   
       // for each question...
       quizQuestions.forEach( (element, idx) => {
@@ -55,7 +55,7 @@
         // if answer is correct
         if(userAnswer === element.rightAnswer){
           // add to the number of correct answers
-          numCorrect++;
+          totCorrect++;
   
           // color the answers green
           answerContainers[idx].style.color = 'green';
@@ -65,17 +65,19 @@
           // color the answers red
           answerContainers[idx].style.color = 'red';
         }
+
+        if (totCorrect >=3){
+            scoreCached.innerHTML = "You passed"  
+            //console.log(scoreCached.innerHTML)
+        }
+        else{
+            scoreCached.innerHTML ="You failed"
+        }
       });
   
       // show number of correct answers out of total
-      resultCached.innerHTML = `${numCorrect} out of ${quizQuestions.length}`;
-    //   if (numCorrect >=3){
-    //       scoreCached.innerHTML = console.log("You passed")
-        
-    //   }
-    //   else{
-    //       scoreCached.innerHTML = console.log("You failed")
-    //   }
+      resultCached.innerHTML = `${totCorrect} out of ${quizQuestions.length}`;
+      
     }
   
     function showSlide(n) {
@@ -107,6 +109,7 @@
     }
   
     // Variables for the DOM manupulation
+    const scoreCached = document.getElementById('score')
     const quizCached = document.getElementById('quiz');
     const resultCached = document.getElementById('results');
     const submitBtn = document.getElementById('submit');
@@ -174,5 +177,6 @@
     submitBtn.addEventListener('click', theResults);
     previousBtn.addEventListener("click", showPreviousSlide);
     nextBtn.addEventListener("click", showNextSlide);
+
   })();
   
