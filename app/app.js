@@ -80,8 +80,34 @@ function quizLogic()
         
         output.push(
             `<div class='question'> ${element.question}</div>
-            <div class = 'answer'>${answers.join('')}</div>`
+            <div class = 'answers'>${answers.join('')}</div>`
         )
 
     
+}
+
+function theResult(){
+    const allAnswers = quizCached.querySelectorAll('.answers')
+
+    //tracking the users answers and initializing to 0
+    let totCorrect = 0;
+
+    quizQuestions.forEach((element,idx)=>{
+        // to get the selected answer from user // idx here is question number
+        const eachAnswer = allAnswers[idx]
+        const selector = `input[name=question${idx}]:checked`;
+        const theUserAnswer = (eachAnswer.querySelector(selector) || {}).value
+
+
+        //to check if the answer is correct 
+
+        if (theUserAnswer === element.rightAnswer){
+            totCorrect++
+            allAnswers[idx].style.color = 'green'
+
+        }
+
+        
+    })
+
 }
