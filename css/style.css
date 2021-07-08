@@ -1,19 +1,18 @@
-@import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
-
+@import url('https://fonts.googleapis.com/css2?family=Uchen&display=swap')
 body{
 	font-size: 20px;
-	font-family: 'Work Sans', sans-serif;
+	font-family: 'Uchen', serif;
 	color: #333;
   font-weight: 300;
   text-align: center;
   background-color: #f8f6f0;
 }
 h1{
-  font-weight: 200;
+  font-weight: 2;
   margin: 0px;
   padding: 10px;
   font-size: 20px;
-  background-color: #444;
+  background-color: rgb(192, 123, 123);
   color: #fff;
 }
 .question{
@@ -32,10 +31,10 @@ h1{
 button{
    font-family: 'Work Sans', sans-serif;
 	font-size: 22px;
-	background-color: rgb(72, 189, 235);
+	background-color: rgb(4, 19, 26);
 	color: #fff;
 	border: 0px;
-	border-radius: 44px;
+	border-radius: 22px;
 	padding: 20px;
 	cursor: pointer;
 	margin-bottom: 20px;
